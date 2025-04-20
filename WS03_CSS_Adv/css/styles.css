@@ -1,0 +1,322 @@
+/* Base styles */
+body {
+  background-color: #252525;
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+  font-size: 0.8em;
+  max-width: 50%;
+}
+
+/* the img */
+body > img {
+  padding: 0%;
+  margin: 0%;
+}
+
+/* the table */
+body > table {
+  width: 480px; /* img width */
+  border-collapse: collapse;
+}
+
+/* table items & bg */
+th, td {
+  border: 1px solid #ffffff;
+  padding: 8px;
+  text-transform: lowercase;
+  text-align: left;
+}
+
+th {
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 1000;
+  background-color: #151515;
+}
+
+/* text */
+h1 {
+  color: greenyellow;
+}
+
+a {
+  color: #556cff;
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: greenyellow;
+}
+
+a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: greenyellow;
+  transition: width 0.3s ease;
+}
+
+a:hover::after {
+  width: 100%;
+}
+
+p {
+  filter: brightness(0.7);
+}
+
+/* Transition examples */
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: #556cff;
+  margin: 20px 0;
+  /* Basic transition */
+  transition: all 0.5s ease;
+}
+
+.box:hover {
+  background-color: greenyellow;
+  transform: scale(1.2);
+}
+
+.delay-box {
+  width: 100px;
+  height: 100px;
+  background-color: #ff5151;
+  margin: 20px 0;
+  /* Transition with delay */
+  transition: all 0.5s ease 0.3s;
+}
+
+.delay-box:hover {
+  background-color: #ffcc00;
+  transform: rotate(45deg);
+}
+
+.property-box {
+  width: 100px;
+  height: 100px;
+  background-color: #00ccff;
+  margin: 20px 0;
+  border: 2px solid white;
+  /* Multiple specific properties */
+  transition: width 0.5s ease-out, 
+              height 0.8s ease-in,
+              background-color 1s linear;
+}
+
+.property-box:hover {
+  width: 200px;
+  height: 150px;
+  background-color: #ff00cc;
+}
+
+/* List transitions */
+.transition-list li {
+  transition: transform 0.3s ease, color 0.3s ease;
+  cursor: pointer;
+}
+
+.transition-list li:hover {
+  transform: translateX(10px);
+  color: greenyellow;
+}
+
+/* Transform examples for transitions */
+.transform-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.transform-box {
+  width: 100px;
+  height: 100px;
+  background-color: #9c27b0;
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  transition: all 0.5s ease;
+}
+
+.scale:hover {
+  transform: scale(1.5);
+}
+
+.rotate:hover {
+  transform: rotate(180deg);
+}
+
+.skew:hover {
+  transform: skew(20deg, 10deg);
+}
+
+.translate:hover {
+  transform: translate(20px, 20px);
+}
+
+/* input fields */
+input[type="text"],
+input[type="email"] {
+  background-color: #151515;
+  color: #ffffff;
+  border: 1px solid #ffffff;
+  padding: 6px;
+  max-width: 480px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus {
+  border-color: greenyellow;
+  box-shadow: 0 0 5px greenyellow;
+  outline: none;
+}
+
+input[type="submit"] {
+  background-color: #151515;
+  color: #ffffff;
+  border: 1px solid #ffffff;
+  padding: 6px;
+  max-width: 480px;
+  cursor: pointer;
+  font-weight: 1000;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+input[type="submit"]:hover {
+  background-color: rgb(255, 255, 255);
+  color: #151515;
+  transition: background-color .2s ease;
+}
+
+label {
+  color: #ffffff;
+  padding: 5px 3px;
+  font-weight: 1000;
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+}
+
+label:hover {
+  color: greenyellow;
+}
+
+/* img filters */
+.filter-image {
+  filter: grayscale(100%);
+  transition: filter 0.3s ease;
+  max-width: 200px;
+}
+
+.filter-image:hover {
+  filter: grayscale(0%);
+}
+
+/* css animation */
+.animation-box {
+  position: relative;
+  width: 150px;
+  margin: -50px 0 0 0;
+}
+
+.animation-box img {
+  width: 150px;
+  height: auto;
+  position: relative;
+  animation: jump-squish 1s infinite ease-in-out;
+  transform-origin: bottom center; /* Make sure squishing happens from the bottom */
+}
+
+@keyframes jump-squish {
+  /* Start with normal state and pause */
+  0%, 10% {
+    transform: translateY(0) scaleX(1) scaleY(1); /* Normal state with pause */
+  }
+  /* Prepare for jump */
+  20% {
+    transform: translateY(0) scaleX(1.2) scaleY(0.8); /* Prepare to jump - squish down */
+  }
+  /* Rising */
+  35% {
+    transform: translateY(-20px) scaleX(0.9) scaleY(1.1); /* Stretch vertically while in air */
+  }
+  /* Peak height */
+  45% {
+    transform: translateY(-25px) scaleX(0.9) scaleY(1.1); /* At peak height */
+  }
+  /* Falling */
+  60% {
+    transform: translateY(-10px) scaleX(0.9) scaleY(1.1); /* Coming down */
+  }
+  /* Landing squish */
+  70% {
+    transform: translateY(0) scaleX(1.3) scaleY(0.7); /* Landing squish - wider and shorter */
+  }
+  /* Return to normal and stay there until next cycle */
+  80%, 100% {
+    transform: translateY(0) scaleX(1) scaleY(1); /* Return to normal with pause */
+  }
+}
+
+/* css pseudo-classes */
+.pseudo-list {
+  list-style-type: none;
+  padding: 0;
+  width: 200px;
+}
+
+.pseudo-list li {
+  padding: 8px;
+}
+
+.pseudo-list li:nth-child(odd) {
+  background-color: lightgray;
+}
+
+.pseudo-list li:nth-child(even) {
+  background-color: white;
+  color: #252525;
+}
+
+/* css filters */
+.filter-image {
+  filter: grayscale(100%);
+  transition: filter 0.3s ease;
+  max-width: 480px;
+}
+
+.filter-image:hover {
+  filter: grayscale(0%);
+}
+
+/* pseudo-elements */
+.quote {
+  position: relative;
+  font-style: italic;
+  margin-left: 20px;
+  color: #ffffff;
+}
+
+.quote::before {
+  content: '"';
+  font-size: 20px;
+  left: 0;
+  top: -10px;
+  color: lightgray;
+}
+.quote::after {
+  content: '"';
+  font-size: 20px;
+  right: 0;
+  bottom: -10px;
+  color: lightgray;
+}

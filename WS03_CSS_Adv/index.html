@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fi">
+
+<head>
+  <link rel="stylesheet" href="./css/styles.css" />
+  <title>ws03_css_adv rasmus m.</title>
+</head>
+
+<body>
+  <h1 style="color: rgb(255, 81, 81)">title (css transitions)</h1>
+  <h1>title</h1>
+  <p>p element</p>
+  <img src="../images/example.gif" alt="Lorem ipsum" />
+  <br/><br/>
+  <a href="https://github.com/rasmns-s/ND00CC04-3001">Project repository link</a>
+  <br/><br/>
+  <h2>ordered list (with numerals)</h2>
+  <ol>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+  </ol>
+  <br/><br/>
+  <table>
+    <tr>
+      <th>header 1</th>
+      <th>header 2</th>
+    </tr>
+    <tr>
+      <td>row 1 cell 1</td>
+      <td>row 1 cell 2</td>
+    </tr>
+    <tr>
+      <td>row 2 cell 1</td>
+      <td>row 2 cell 2</td>
+    </tr>
+  </table>
+  <br/><br/><br/>
+  <form>
+    <label for="name">Nimi</label><br/>
+    <input type="text" id="name" name="name" /><br/><br/>
+    <label for="email">Sähköposti</label><br/>
+    <input type="email" id="email" name="email" /><br/><br/>
+    <input type="submit" value="Kirjaudu" />
+  </form>
+  <script>
+    document.querySelector("form").addEventListener("submit", function (e) {
+      e.preventDefault();
+      localStorage.setItem("scrollPosition", window.scrollY);
+    });
+    // scrollaa takas formiin kohalle ennen submittia
+    window.addEventListener("load", function () {
+      const savedPosition = localStorage.getItem("scrollPosition");
+      if (savedPosition) {
+        window.scrollTo({ top: savedPosition, behavior: "smooth" });
+        localStorage.removeItem("scrollPosition");
+      }
+    });
+  </script>
+  <h2>"pseudo-classes"</h2>
+  <ul class="pseudo-list">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+  </ul>
+  <br/><br/>
+  <blockquote class="quote">blockquote</blockquote>
+  <br/><br/>
+  <div class="animation-box">
+    <img class="filter-image" src="../images/putty_inspyrenet.png" alt="putty"/>
+  </div>
+  <br/><br/>
+</body>
+</html>
