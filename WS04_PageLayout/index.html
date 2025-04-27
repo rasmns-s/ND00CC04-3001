@@ -1,25 +1,59 @@
 <!DOCTYPE html>
 <html lang="fi">
   <head>
-    <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="stylesheet" href="./css/styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ws04_page_layout rasmus m.</title>
   </head>
   <body>
-    <div class="flex-container">
-      <div class="box">ph1</div>
-      <div class="box">ph2</div>
-      <div class="box">ph3</div>
-    </div>
-<br><br><br>
-    <div class="grid-container">
-      <div class="grid-item">ph4</div>
-      <div class="grid-item">ph5</div>
-      <div class="grid-item">ph6</div>
-      <div class="grid-item">ph7</div>
-      <div class="grid-item">ph8</div>
-      <div class="grid-item">ph9</div>
-    </div>
-<br><br><br>
-    <div class="responsive-box">(((φ(◎ロ◎;)φ)))</div>
+    <header>
+      <h1>ws04 page_layout title</h1>
+      <nav class="header-nav">
+          <a href="#about" class="nav-button">Tietoja</a>
+          <a href="#services" class="nav-button">Palvelut</a>
+          <a href="#contact" class="nav-button">Ota yhteyttä</a>
+      </nav>
+    </header>
+    <main>
+      <section id="about">
+        <h2>Tietoja</h2>
+        <div class="flex-container">
+          <div class="box">yht. tieto1</div>
+          <div class="box">yht. tieto2</div>
+          <div class="box">yht. tieto3</div>
+        </div>
+      </section>
+      <section id="services">
+        <h2>Palvelut</h2>
+        <div class="grid-container">
+          <div class="grid-item">ph4</div>
+          <div class="grid-item">ph5</div>
+          <div class="grid-item">ph6</div>
+          <div class="grid-item">ph7</div>
+          <div class="grid-item">ph8</div>
+          <div class="grid-item">ph9</div>
+        </div>
+      </section>
+      <section id="contact">
+        <h2>Ota yhteyttä</h2>
+        <form>
+          <label for="name">Nimi</label><br>
+          <input type="text" id="name" name="name"><br><br>
+          <label for="email">Sähköposti</label><br>
+          <input type="email" id="email" name="email"><br><br>
+          <input type="submit" value="Lähetä">
+        </form>
+      </section>
+    </main>
+    <footer>
+      <p>&copy; ws04 page layout, rasmus m.</p>
+      <nav>
+        <ul>
+          <li><a href="#about">Tietoja</a></li>
+          <li><a href="#services">Palvelut</a></li>
+          <li><a href="#contact">Ota yhteyttä</a></li>
+        </ul>
+      </nav>
+    </footer>
   </body>
 </html>
