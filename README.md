@@ -5,5 +5,4 @@ Websivuston kehittäminen ND00CC04-3001
 - [WS01_HTML](WS01_HTML/index.html) - HTML basics
 - [WS02_CSS](WS02_CSS/) - CSS fundamentals
 - [WS03_CSS_Adv](WS03_CSS_Adv/) - Advanced CSS techniques
-
-## Repository Structure
+- [WS03_PageLayout](WS04_PageLayout) - Page Layout Techniques
