@@ -1,0 +1,44 @@
+/* Dark mode styles */
+/* ok! */
+body {
+    background-color: #252525;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+}
+
+.card {
+    background-color: #333;
+    color: #ffffff;
+}
+
+.card-text {
+    color: #ffffff;
+}
+
+/* Override Bootstrap's default text colors in dark mode */
+/* ok! */
+.text-dark {
+    color: #ffffff !important;
+}
+
+div {
+    padding: 10px 0;
+    margin-bottom: 15px;
+}
+
+.navbar div,
+.card div,
+.row div,
+.container-fluid div {
+    margin-bottom: 0;
+}
+
+.container {
+    margin-bottom: 30px;
+}
+
+.card {
+    padding-top: 0px;
+    margin-bottom: 30px;
+    left: 9%;
+}
