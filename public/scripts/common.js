@@ -4,7 +4,6 @@ document.addEventListener('DOMContentLoaded', () => {
   setupMobileMenu();
   initPreciseSmoothScroll();
   setupSubmissionForm();
-  loadSvgIcons();
 });
 
 /**
@@ -164,19 +163,4 @@ function setupSubmissionForm() {
       submissionPopup.classList.remove('active');
     });
   }
-}
-
-/**
- * Loads SVG icons from external file
- */
-function loadSvgIcons() {
-  fetch('../images/socials.svg')
-    .then(response => response.text())
-    .then(data => {
-      const div = document.createElement('div');
-      div.style.display = 'none';
-      div.innerHTML = data;
-      document.body.insertBefore(div, document.body.firstChild);
-    })
-    .catch(error => console.warn('Failed to load SVG icons:', error));
 }
